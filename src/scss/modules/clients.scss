@@ -1,0 +1,68 @@
+@keyframes circles {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  20% {
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+  30% {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  70% {
+    transform: translate(-50%, -50%) scale(1.9);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.clients {
+  text-align: center;
+
+  
+  &__img {
+    display: block;
+    margin: 0 auto;
+    height: 200px;
+    width: 200px;
+    
+    }
+  &__counter {
+    display: block;
+    text-align: center;
+    margin-bottom: 100px;
+  }
+
+  &__bar {
+    display: block;
+    width: 90%;
+    height: 16px;
+    margin: 0 auto;
+    background-color: white;
+  }
+
+  &__message {
+    color: red;
+    height: 16px;
+  }
+
+  &__wrapper{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__button {
+    display: block;
+    padding: 0;
+    height: 64px;
+    width: 64px;
+    background: none;
+    border: none;
+    outline: inherit;
+    text-align: center;
+    &--img {
+      height: 64px;
+      width: 64px;
+    }
+  }
+}
