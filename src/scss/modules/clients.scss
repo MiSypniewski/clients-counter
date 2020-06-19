@@ -35,10 +35,20 @@
 
   &__bar {
     display: block;
+    position: relative;
     width: 90%;
     height: 16px;
     margin: 0 auto;
     background-color: white;
+    &--progress {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30px;
+      height: 16px;
+      background-color: green;
+      // z-index: 20;
+    }
   }
 
   &__message {
