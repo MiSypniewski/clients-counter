@@ -62,4 +62,16 @@ removeButton.addEventListener("click", () => {
   setTimeout(() => removeButton.classList.toggle("clients__button--active"), 200);
 });
 
+const hamburgerButton = document.querySelector(".navigation__button--js");
+const closeButton = document.querySelector(".asside__button--js");
+const assideMenu = document.querySelector(".asside");
+
+hamburgerButton.addEventListener("click", () => {
+  assideMenu.classList.toggle("asside--active");
+});
+
+closeButton.addEventListener("click", () => {
+  assideMenu.classList.toggle("asside--active");
+});
+
 // console.log('HELLO 🚀')
