@@ -3,7 +3,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   background-color: $wtf;
   transform: translateX(100%);
@@ -35,5 +35,33 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  &__wrapper {
+    margin-top: 48px;
+  }
+
+  &__header {
+    text-align: center;
+  }
+
+  &__label {
+    display: block;
+    margin-top: px;
+  }
+
+  &__input {
+    width: 32px;
+    margin-left: 8px;
+    // padding: 2px;
+  }
+
+  &__statistic {
+    display: block;
+    overflow: scroll;
+    height: 300px;
+    // &--item {
+    //   display: block;
+    // }
   }
 }
