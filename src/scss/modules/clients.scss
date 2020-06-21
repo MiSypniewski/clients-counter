@@ -20,6 +20,8 @@
   text-align: center;
 
   &__img {
+    top: 0;
+    left: 0;
     display: block;
     margin: 0 auto;
     height: 200px;
@@ -28,7 +30,15 @@
   &__counter {
     display: block;
     text-align: center;
-    margin-bottom: 100px;
+    width: 48px;
+    margin: 32px auto 0;
+    padding: 8px;
+    font-weight: bold;
+    border-radius: 16px;
+
+    color: black;
+    background-color: white;
+    // transform: translateY(-110px);
   }
 
   &__bar {
@@ -36,15 +46,19 @@
     position: relative;
     width: 90%;
     height: 16px;
-    margin: 0 auto;
+    margin: 48px auto 0;
     background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
     &--progress {
       position: absolute;
       top: 0;
       left: 0;
-      width: 30px;
+      width: 0;
       height: 16px;
       background-color: green;
+      // border-radius: 5px;
+      transition: width 0.1s ease-in-out;
     }
   }
 
@@ -58,7 +72,7 @@
     display: flex;
     justify-content: space-around;
     margin: 20px;
-    height: 72px;
+    // height: 72px;
   }
 
   &__button {

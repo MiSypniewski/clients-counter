@@ -10,8 +10,10 @@ const addButton = document.querySelector(".clients__button--add-js");
 const removeButton = document.querySelector(".clients__button--remove-js");
 const counterHtmlElement = document.querySelector(".clients__counter--js");
 const messageHtmlElement = document.querySelector(".clients__message--js");
+const progressBar = document.querySelector(".clients__bar--progress");
+
 let counter = 0;
-const maxClients = 30;
+const maxClients = 15;
 let message = "";
 
 const handleChangeClientCounter = (changes) => {
@@ -36,11 +38,21 @@ const handleChangeClientCounter = (changes) => {
 const showClients = () => {
   counterHtmlElement.innerHTML = counter;
   messageHtmlElement.innerHTML = message;
+  const size = (counter / maxClients) * 100;
+  progressBar.style.width = `${size}%`;
+  if (size <= 70) {
+    progressBar.style.background = "#3F784C";
+  } else if (size > 70 && size <= 99) {
+    progressBar.style.background = "#C17817";
+  } else {
+    progressBar.style.background = "#B20D30";
+  }
 };
 
 addButton.addEventListener("click", () => {
   handleChangeClientCounter("add");
   addButton.classList.toggle("clients__button--active");
+
   setTimeout(() => addButton.classList.toggle("clients__button--active"), 200);
 });
 
