@@ -19,14 +19,12 @@
 .clients {
   text-align: center;
 
-  
   &__img {
     display: block;
     margin: 0 auto;
     height: 200px;
     width: 200px;
-    
-    }
+  }
   &__counter {
     display: block;
     text-align: center;
@@ -47,21 +45,24 @@
       width: 30px;
       height: 16px;
       background-color: green;
-      // z-index: 20;
     }
   }
 
   &__message {
     color: red;
     height: 16px;
+    padding: 8px;
   }
 
-  &__wrapper{
+  &__wrapper {
     display: flex;
     justify-content: space-around;
+    margin: 20px;
+    height: 72px;
   }
 
   &__button {
+    position: relative;
     display: block;
     padding: 0;
     height: 64px;
@@ -70,7 +71,32 @@
     border: none;
     outline: inherit;
     text-align: center;
-    &--img {
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.1);
+    transition: transform 0.1s linear;
+
+    &--active {
+      transform: scale(1.2);
+    }
+
+    // &::before {
+    //   position: absolute;
+    //   content: "";
+    //   top: 0;
+    //   left: 0;
+    //   height: 64px;
+    //   width: 64px;
+    //   border-radius: 50%;
+    //   background: rgba(0, 0, 0, 0.1);
+    //   z-index: -2;
+    //   transition: transform 0.1s linear;
+    // }
+
+    // &:hover::before {
+    //   transform: scale(1.2);
+    // }
+
+    &__img {
       height: 64px;
       width: 64px;
     }
