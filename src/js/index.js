@@ -41,11 +41,14 @@ const showClients = () => {
   const size = (counter / maxClients) * 100;
   progressBar.style.width = `${size}%`;
   if (size <= 70) {
-    progressBar.style.background = "#3F784C";
+    progressBar.style.background = "rgb(63,120,76)";
+    progressBar.style.background = "linear-gradient(180deg, rgba(63,120,76,1) 0%, rgba(98,182,117,1) 50%, rgba(63,120,76,1) 100%)";
   } else if (size > 70 && size <= 99) {
-    progressBar.style.background = "#C17817";
+    progressBar.style.background = "rgb(193,120,23)";
+    progressBar.style.background = "linear-gradient(180deg, rgba(193,120,23,1) 0%, rgba(251,191,110,1) 50%, rgba(193,120,23,1) 100%)";
   } else {
-    progressBar.style.background = "#B20D30";
+    progressBar.style.background = "rgb(178,13,48)";
+    progressBar.style.background = "linear-gradient(180deg, rgba(178,13,48,1) 0%, rgba(249,46,89,1) 50%, rgba(178,13,48,1) 100%)";
   }
 };
 
