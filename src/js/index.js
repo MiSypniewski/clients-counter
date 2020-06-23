@@ -15,13 +15,19 @@ const hamburgerButton = document.querySelector(".navigation__button--js");
 const closeButton = document.querySelector(".asside__button--js");
 const assideMenu = document.querySelector(".asside");
 const maxClientsInput = document.querySelector(".asside__input--js");
+const data = new Date().toISOString().slice(0, 10);
 let maxClients = 10;
 let counter = 0;
 let message = "";
+let clientsToday = 0;
 
 if (localStorage.getItem("maxClients")) {
   maxClients = localStorage.getItem("maxClients");
   maxClientsInput.value = maxClients;
+}
+
+if (localStorage.getItem("data")) {
+  clientsToday = localStorage.getItem("data");
 }
 
 maxClientsInput.addEventListener("change", () => {
@@ -35,6 +41,7 @@ const handleChangeClientCounter = (changes) => {
       message = "Maksymalna ilość klientów!";
     } else {
       counter++;
+      clientsToday++;
       message = "";
     }
   } else {
@@ -46,6 +53,7 @@ const handleChangeClientCounter = (changes) => {
     }
   }
   showClients();
+  localStorage.setItem(data, clientsToday);
 };
 
 const showClients = () => {
@@ -68,6 +76,24 @@ const showClients = () => {
   }
 };
 
+const allStorage = () => {
+  var values = [],
+    keys = Object.keys(localStorage),
+    i = keys.length;
+  console.log(keys);
+  while (i--) {
+    values.push({
+      [keys[i]]: localStorage.getItem(keys[i]),
+    });
+  }
+
+  return values;
+};
+
+const showHistry = () => {
+  console.log(allStorage());
+};
+
 addButton.addEventListener("click", () => {
   handleChangeClientCounter("add");
   addButton.classList.toggle("clients__button--active");
@@ -88,5 +114,7 @@ hamburgerButton.addEventListener("click", () => {
 closeButton.addEventListener("click", () => {
   assideMenu.classList.toggle("asside--active");
 });
+
+showHistry();
 
 // console.log('HELLO 🚀')
