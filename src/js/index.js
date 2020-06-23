@@ -11,10 +11,23 @@ const removeButton = document.querySelector(".clients__button--remove-js");
 const counterHtmlElement = document.querySelector(".clients__counter--js");
 const messageHtmlElement = document.querySelector(".clients__message--js");
 const progressBar = document.querySelector(".clients__bar--progress");
-
+const hamburgerButton = document.querySelector(".navigation__button--js");
+const closeButton = document.querySelector(".asside__button--js");
+const assideMenu = document.querySelector(".asside");
+const maxClientsInput = document.querySelector(".asside__input--js");
+let maxClients = 10;
 let counter = 0;
-const maxClients = 15;
 let message = "";
+
+if (localStorage.getItem("maxClients")) {
+  maxClients = localStorage.getItem("maxClients");
+  maxClientsInput.value = maxClients;
+}
+
+maxClientsInput.addEventListener("change", () => {
+  maxClients = maxClientsInput.value;
+  localStorage.setItem("maxClients", maxClients);
+});
 
 const handleChangeClientCounter = (changes) => {
   if (changes === "add") {
@@ -42,13 +55,16 @@ const showClients = () => {
   progressBar.style.width = `${size}%`;
   if (size <= 70) {
     progressBar.style.background = "rgb(63,120,76)";
-    progressBar.style.background = "linear-gradient(180deg, rgba(63,120,76,1) 0%, rgba(98,182,117,1) 50%, rgba(63,120,76,1) 100%)";
+    progressBar.style.background =
+      "linear-gradient(180deg, rgba(63,120,76,1) 0%, rgba(98,182,117,1) 50%, rgba(63,120,76,1) 100%)";
   } else if (size > 70 && size <= 99) {
     progressBar.style.background = "rgb(193,120,23)";
-    progressBar.style.background = "linear-gradient(180deg, rgba(193,120,23,1) 0%, rgba(251,191,110,1) 50%, rgba(193,120,23,1) 100%)";
+    progressBar.style.background =
+      "linear-gradient(180deg, rgba(193,120,23,1) 0%, rgba(251,191,110,1) 50%, rgba(193,120,23,1) 100%)";
   } else {
     progressBar.style.background = "rgb(178,13,48)";
-    progressBar.style.background = "linear-gradient(180deg, rgba(178,13,48,1) 0%, rgba(249,46,89,1) 50%, rgba(178,13,48,1) 100%)";
+    progressBar.style.background =
+      "linear-gradient(180deg, rgba(178,13,48,1) 0%, rgba(249,46,89,1) 50%, rgba(178,13,48,1) 100%)";
   }
 };
 
@@ -64,10 +80,6 @@ removeButton.addEventListener("click", () => {
   removeButton.classList.toggle("clients__button--active");
   setTimeout(() => removeButton.classList.toggle("clients__button--active"), 200);
 });
-
-const hamburgerButton = document.querySelector(".navigation__button--js");
-const closeButton = document.querySelector(".asside__button--js");
-const assideMenu = document.querySelector(".asside");
 
 hamburgerButton.addEventListener("click", () => {
   assideMenu.classList.toggle("asside--active");

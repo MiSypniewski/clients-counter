@@ -56,9 +56,12 @@
     // padding: 2px;
   }
 
-  &__statistic {
+  &__history {
     display: block;
     overflow: scroll;
+    width: 95vw;
+    margin: 0 auto;
+    text-align: center;
     height: 300px;
     // &--item {
     //   display: block;
