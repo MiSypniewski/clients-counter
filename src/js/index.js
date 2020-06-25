@@ -15,24 +15,26 @@ const hamburgerButton = document.querySelector(".navigation__button--js");
 const closeButton = document.querySelector(".asside__button--js");
 const assideMenu = document.querySelector(".asside");
 const maxClientsInput = document.querySelector(".asside__input--js");
+const assideHistoryHTMLElement = document.querySelector(".asside__history");
 const data = new Date().toISOString().slice(0, 10);
+
 let maxClients = 10;
 let counter = 0;
 let message = "";
 let clientsToday = 0;
 
-if (localStorage.getItem("maxClients")) {
-  maxClients = localStorage.getItem("maxClients");
+if (localStorage.getItem("maxValue")) {
+  maxClients = localStorage.getItem("maxValue");
   maxClientsInput.value = maxClients;
 }
 
-if (localStorage.getItem("data")) {
-  clientsToday = localStorage.getItem("data");
+if (localStorage.getItem(data)) {
+  clientsToday = localStorage.getItem(data);
 }
 
 maxClientsInput.addEventListener("change", () => {
   maxClients = maxClientsInput.value;
-  localStorage.setItem("maxClients", maxClients);
+  localStorage.setItem("maxValue", maxClients);
 });
 
 const handleChangeClientCounter = (changes) => {
@@ -76,22 +78,41 @@ const showClients = () => {
   }
 };
 
-const allStorage = () => {
-  var values = [],
-    keys = Object.keys(localStorage),
-    i = keys.length;
-  console.log(keys);
+const getAllStorageItems = () => {
+  const values = []
+  const keys = Object.keys(localStorage);
+  let i = keys.length;
+  // console.log(keys);
   while (i--) {
     values.push({
-      [keys[i]]: localStorage.getItem(keys[i]),
+      data: keys[i],
+      value: localStorage.getItem(keys[i]),
     });
   }
 
   return values;
 };
 
-const showHistry = () => {
-  console.log(allStorage());
+const showData = () => {
+  const values = []
+  const keys = Object.keys(localStorage);
+  let i = keys.length;
+  while (i--) {
+    values.push({
+      data: keys[i],
+      value: localStorage.getItem(keys[i]),
+    });
+  }
+
+  values.forEach(item => {
+    assideHistoryHTMLElement.innerHTML = " ";
+    if (item.data.length == 10) {
+      const p = document.createElement('p');
+      p.innerHTML = `${item.data}: odwiedziło ${item.value} klientów`;
+      p.classList.add("asside__item");
+      assideHistoryHTMLElement.appendChild(p);
+    }
+  })
 };
 
 addButton.addEventListener("click", () => {
@@ -109,12 +130,11 @@ removeButton.addEventListener("click", () => {
 
 hamburgerButton.addEventListener("click", () => {
   assideMenu.classList.toggle("asside--active");
+  showData();
 });
 
 closeButton.addEventListener("click", () => {
   assideMenu.classList.toggle("asside--active");
 });
-
-showHistry();
 
 // console.log('HELLO 🚀')
