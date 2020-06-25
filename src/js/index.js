@@ -78,21 +78,6 @@ const showClients = () => {
   }
 };
 
-const getAllStorageItems = () => {
-  const values = []
-  const keys = Object.keys(localStorage);
-  let i = keys.length;
-  // console.log(keys);
-  while (i--) {
-    values.push({
-      data: keys[i],
-      value: localStorage.getItem(keys[i]),
-    });
-  }
-
-  return values;
-};
-
 const showData = () => {
   const values = []
   const keys = Object.keys(localStorage);
