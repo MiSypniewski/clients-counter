@@ -79,7 +79,7 @@ const showClients = () => {
 };
 
 const showData = () => {
-  const values = []
+  const values = [];
   const keys = Object.keys(localStorage);
   let i = keys.length;
   while (i--) {
@@ -88,16 +88,14 @@ const showData = () => {
       value: localStorage.getItem(keys[i]),
     });
   }
-
-  values.forEach(item => {
-    assideHistoryHTMLElement.innerHTML = " ";
+  values.forEach((item) => {
     if (item.data.length == 10) {
-      const p = document.createElement('p');
+      const p = document.createElement("p");
       p.innerHTML = `${item.data}: odwiedziło ${item.value} klientów`;
       p.classList.add("asside__item");
       assideHistoryHTMLElement.appendChild(p);
     }
-  })
+  });
 };
 
 addButton.addEventListener("click", () => {
@@ -122,6 +120,7 @@ hamburgerButton.addEventListener("click", () => {
 closeButton.addEventListener("click", () => {
   assideMenu.classList.toggle("asside--active");
   progressBar.classList.remove("clients__progressbar--disable");
+  assideHistoryHTMLElement.innerHTML = " ";
 });
 
 // console.log('HELLO 🚀')
