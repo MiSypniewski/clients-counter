@@ -10,7 +10,7 @@ const addButton = document.querySelector(".clients__button--add-js");
 const removeButton = document.querySelector(".clients__button--remove-js");
 const counterHtmlElement = document.querySelector(".clients__counter--js");
 const messageHtmlElement = document.querySelector(".clients__message--js");
-const progressBar = document.querySelector(".clients__bar--progress");
+const progressBar = document.querySelector(".clients__progressbar--js");
 const hamburgerButton = document.querySelector(".navigation__button--js");
 const closeButton = document.querySelector(".asside__button--js");
 const assideMenu = document.querySelector(".asside");
@@ -116,10 +116,12 @@ removeButton.addEventListener("click", () => {
 hamburgerButton.addEventListener("click", () => {
   assideMenu.classList.toggle("asside--active");
   showData();
+  progressBar.classList.add("clients__progressbar--disable");
 });
 
 closeButton.addEventListener("click", () => {
   assideMenu.classList.toggle("asside--active");
+  progressBar.classList.remove("clients__progressbar--disable");
 });
 
 // console.log('HELLO 🚀')
