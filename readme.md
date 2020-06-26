@@ -1,18 +1,18 @@
-![cover](https://cotenfrontend.pl/img/cover.png)
+![cover](https://misypniewski.github.io/clients-counter/og.png)
 
-# WTF Webpack Starter Kit 
+# Licznik klientów!
 
-Simple toolkit for your static websites development.
+Prosta aplikacja to liczenia klientów w sklepie.
+Przydatne do przestrzegania sanepidowskich obostrzeń.
 
-## How to use it?
+## Jak używać?
 
-Click on `Use this template` button to generate a new repository based on this starter kit. After that clone it to your computer, go to the project directory in console and type `npm install`.
+Kliknij na przycisk "menu" w prawym górnym rogu.
+Wpisz maksymalną liczbę klientów która może być w Twoim sklepie.
 
-## Available scripts
+Za pomocą "+" dodawaj klienta który wszedł do sklepu.
+Przyciskiem "-" usuwaj klienta który opuścił sklep.
 
-`npm run start` - runs development mode
+## Historia
 
-`npm run build` - runs build process for production
-
-`npm run publish` - runs build process and publish the page using `gh-pages` branch
-
+Historia pokazuje liczbę klientów z poszczególnych dni.
