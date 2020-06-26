@@ -1,6 +1,6 @@
 {
-  "name": "COUNTER CLIENTS",
-  "short_name": "COUNTER CLIENTS",
+  "name": "Licznik klientów",
+  "short_name": "Licznik klientów",
   "theme_color": "#242c4d",
   "background_color": "#242c4d",
   "display": "standalone",
