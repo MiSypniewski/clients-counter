@@ -1,8 +1,8 @@
 {
   "name": "COUNTER CLIENTS",
   "short_name": "COUNTER CLIENTS",
-  "theme_color": "#2D2241",
-  "background_color": "#2D2241",
+  "theme_color": "#242c4d",
+  "background_color": "#242c4d",
   "display": "standalone",
   "orientation": "portrait",
   "scope": "/clients-counter/",
