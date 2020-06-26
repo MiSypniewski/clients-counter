@@ -91,7 +91,7 @@ const showData = () => {
   values.forEach((item) => {
     if (item.data.length == 10) {
       const p = document.createElement("p");
-      p.innerHTML = `${item.data}: odwiedziło ${item.value} klientów`;
+      p.innerHTML = `${item.data}: Sklep odwiedziło ${item.value} klientów`;
       p.classList.add("asside__item");
       assideHistoryHTMLElement.appendChild(p);
     }
