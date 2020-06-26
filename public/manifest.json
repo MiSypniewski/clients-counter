@@ -1,12 +1,12 @@
 {
-  "name": "WTF: PWA",
-  "short_name": "WTF: PWA",
+  "name": "COUNTER CLIENTS",
+  "short_name": "COUNTER CLIENTS",
   "theme_color": "#2D2241",
   "background_color": "#2D2241",
   "display": "standalone",
   "orientation": "portrait",
-  "scope": "/WTF-PWA-TEST/",
-  "start_url": "/WTF-PWA-TEST/",
+  "scope": "/clients-counter/",
+  "start_url": "/clients-counter/",
   "icons": [
     {
       "src": "pwa/manifest-icon-192.png",
