@@ -28,6 +28,10 @@ if (localStorage.getItem("maxValue")) {
   maxClientsInput.value = maxClients;
 }
 
+if (localStorage.getItem("counter")) {
+  counter = parseInt(localStorage.getItem("counter"));
+}
+
 if (localStorage.getItem(data)) {
   clientsToday = localStorage.getItem(data);
 }
@@ -56,6 +60,7 @@ const handleChangeClientCounter = (changes) => {
   }
   showClients();
   localStorage.setItem(data, clientsToday);
+  localStorage.setItem("counter", counter);
 };
 
 const showClients = () => {
@@ -121,6 +126,9 @@ closeButton.addEventListener("click", () => {
   assideMenu.classList.toggle("asside--active");
   progressBar.classList.remove("clients__progressbar--disable");
   assideHistoryHTMLElement.innerHTML = " ";
+  // showClients();
 });
+
+showClients();
 
 // console.log('HELLO 🚀')
